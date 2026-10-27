@@ -1,0 +1,24 @@
+hr{
+    border: 1px solid black;
+    padding: auto;
+}
+.container{
+    width: 210mm;
+     min-height: 297mm; 
+     margin: 20px auto; 
+     background-color: #f4d5d5; 
+     border: 1px solid #d87575; 
+     border-radius: 20px;
+     padding: 20mm;
+}
+h3{
+    color: rgb(125, 120, 249);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+p,li{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    
+}
