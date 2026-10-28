@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>a=10   b=20  result:<span id="result"></span></h2>
+    
+    <h2>counter: <span id="count">0</span></h2>
+    <button id="ince">increase</button>
+    <button id="dece">decrease</button>
+    <button id="reset">reset</button>
+    <button id="add">add</button>
+    <button id="sub">sub</button>
+    <button id="mul">mul</button>
+    <button id="div">div</button>
+    <script>
+        let count = 0;
+        let button = document.getElementById("ince");
+
+        
+        function increase() {
+            
+            count++;
+            document.getElementById("count").innerText = count;
+            
+        }
+        button.addEventListener("click", increase);
+        
+        let button1 = document.getElementById("dece");
+        function decrease() {
+            count--;
+            document.getElementById("count").innerText = count;
+        }
+        button1.addEventListener("click", decrease);
+           
+        let button2 = document.getElementById("reset");
+        function reset() {
+            count = 0;
+            result=0;
+            document.getElementById("count").innerHTML = count;
+            document.getElementById("result").innerHTML = result;
+        }
+        button2.addEventListener("click", reset);
+    
+        let a=10;
+        let b=20;
+        let button3 = document.getElementById("add");
+
+        function add() {
+            count =a+b;
+            document.getElementById("result").innerText = count;
+        }
+        button3.addEventListener("click", add);
+        let button4 = document.getElementById("sub");
+        function sub() {
+            count = a-b;
+            document.getElementById("result").innerText = count;
+        }
+        button4.addEventListener("click", sub);
+
+        let button5 = document.getElementById("mul");
+        function mul() {
+            count =a*b;
+            document.getElementById("result").innerText = count;
+        }
+        button5.addEventListener("click", mul);
+
+        let button6 = document.getElementById("div");
+        function div() {
+            count = a/b;
+            document.getElementById("result").innerText = count;
+        }
+        button6.addEventListener("click", div);
+        </script>
+    
+</body>
+</html>
