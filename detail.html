@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sivakumar R - Resume</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eeeeee;
+            margin: 0;
+            padding: 20px;
+            color: #222222;
+        }
+
+        .resume {
+            background-color: white;
+            max-width: 800px;
+            margin: auto;
+            padding: 35px;
+            border: 1px solid #cccccc;
+        }
+
+        h1 {
+            text-align: center;
+            color: #234f87;
+            margin-bottom: 5px;
+        }
+
+        .contact {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #234f87;
+            font-size: 18px;
+            border-bottom: 1px solid #234f87;
+            padding-bottom: 5px;
+            margin-top: 22px;
+        }
+
+        h3 {
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 5px 0;
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        li {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .item {
+            margin-bottom: 14px;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto 20px;
+            padding: 10px 18px;
+            background-color: #234f87;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #16365e;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+
+            .resume {
+                border: none;
+                padding: 10px;
+                max-width: none;
+            }
+
+            button {
+                display: none;
+            }
+
+            h2, h3, p, li {
+                break-inside: avoid;
+            }
+
+            @page {
+                size: A4;
+                margin: 15mm;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 8px;
+            }
+
+            .resume {
+                padding: 18px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="window.print()">Download Resume</button>
+
+    <div class="resume" id="profile"></div>
+
+    <script>
+        const userInformation = [
+            {
+                name: "Sivakumar R",
+                emailId: "sivakumar91205@gmail.com",
+                phoneNumber: "6379629414",
+                role: "Software Developer",
+
+                educationDetails: [
+                    {
+                        course: "B.Tech",
+                        college: "S. A. Engineering College",
+                        degree: "Information Technology",
+                        cgpa: "7.88",
+                        year: "2023 - 2027"
+                    },
+                    {
+                        course: "HSC",
+                        college: "Reach Matric. Hr. Sec. School",
+                        degree: "Higher Secondary",
+                        percentage: "72%",
+                        year: "2022 - 2023"
+                    }
+                ],
+
+                skills: [
+                    "Python", "C", "Dart", "JavaScript",
+                    "HTML", "CSS", "MongoDB", "Android Studio",
+                    "GitHub", "Figma", "Manual Testing",
+                    "Functional Testing", "UI/UX Design"
+                ],
+
+                experience: [
+                    {
+                        role: "Software Testing & QA Intern",
+                        company: "Pitchup.com Project-based",
+                        duration: "Project-based"
+                    },
+                    {
+                        role: "Web Development Intern",
+                        company: "One Yes Info Tech",
+                        duration: "2 Months"
+                    }
+                ],
+
+                projects: [
+                    {
+                        name: "VivasaE",
+                        technology: ["Dart", "Android Studio"]
+                    },
+                    {
+                        name: "Vanam",
+                        technology: ["Dart", "Android Studio", "AI"]
+                    }
+                ],
+
+                certifications: [
+                    "Young Professional Course - TCS",
+                    "UI/UX Design",
+                    "MongoDB"
+                ],
+
+                softSkills: [
+                    "Problem-Solving",
+                    "Logical Thinking",
+                    "Teamwork and Collaboration",
+                    "Communication",
+                    "Time Management"
+                ]
+            }
+        ];
+
+        function getUserInformation() {
+            return userInformation[0];
+        }
+
+        function getEducationDetails() {
+            return getUserInformation().educationDetails;
+        }
+
+        function getSkills() {
+            return getUserInformation().skills;
+        }
+
+        function getExperience() {
+            return getUserInformation().experience;
+        }
+
+        function getProjects() {
+            return getUserInformation().projects;
+        }
+
+        function getCertifications() {
+            return getUserInformation().certifications;
+        }
+
+        function getSoftSkills() {
+            return getUserInformation().softSkills;
+        }
+
+        function displayUserInformation() {
+            const user = getUserInformation();
+
+            document.getElementById("profile").innerHTML = `
+                <h1>${user.name}</h1>
+
+                <div class="contact">
+                    <p>${user.role}</p>
+                    <p>Email: ${user.emailId}</p>
+                    <p>Phone: ${user.phoneNumber}</p>
+                </div>
+
+                <h2>Career Objective</h2>
+                <p>
+                    To start my career in software development where I can
+                    use my technical knowledge, improve my programming skills
+                    and contribute to the growth of the organization.
+                </p>
+
+                <h2>Education</h2>
+                ${getEducationDetails().map(item => `
+                    <div class="item">
+                        <h3>${item.course} - ${item.degree}</h3>
+                        <p>${item.college}</p>
+                        <p>
+                            ${item.cgpa
+                                ? "CGPA: " + item.cgpa
+                                : "Percentage: " + item.percentage}
+                        </p>
+                        <p>${item.year}</p>
+                    </div>
+                `).join("")}
+
+                <h2>Technical Skills</h2>
+                <p>${getSkills().join(", ")}</p>
+
+                <h2>Experience</h2>
+                ${getExperience().map(item => `
+                    <div class="item">
+                        <h3>${item.role}</h3>
+                        <p>${item.company}</p>
+                        <p>${item.duration}</p>
+                    </div>
+                `).join("")}
+
+                <h2>Projects</h2>
+                ${getProjects().map(item => `
+                    <div class="item">
+                        <h3>${item.name}</h3>
+                        <p>
+                            Technologies: ${item.technology.join(", ")}
+                        </p>
+                    </div>
+                `).join("")}
+
+                <h2>Certifications</h2>
+                <ul>
+                    ${getCertifications().map(item => `
+                        <li>${item}</li>
+                    `).join("")}
+                </ul>
+
+                <h2>Soft Skills</h2>
+                <ul>
+                    ${getSoftSkills().map(item => `
+                        <li>${item}</li>
+                    `).join("")}
+                </ul>
+            `;
+        }
+
+        displayUserInformation();
+    </script>
+
+</body>
+</html>
